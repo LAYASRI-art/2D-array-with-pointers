@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+   int n,i,sum=0;
+   int a[3][3],j,*p;  //initializing a 3*3 array
+   p=*a;
+    printf("Input elements in the matrix:\n");
+    for(i=0;i<3;i++)
+    {
+    for(j=0;j<3;j++)
+    {  
+       //reading elements of the array
+       printf("element-[%d],[%d]:",i,j);
+       scanf("%d",&a[i][j]);
+    }
+    }
+    //printing the elements of the array using pointers 
+    printf("The matrix is:\n");
+    for(i=0;i<3;i++)
+    {
+    for(j=0;j<3;j++)
+    {
+       printf("%d\t",*(*(a+i)+j));
+    }
+    printf("\n");
+    }
+    //printing the sum of diagonal elements
+    for(i=0;i<3;i++)
+    {
+       for(j=0;j<3;j++)
+       {
+         if(i==j)
+           sum=sum+a[i][j];
+       }
+    }
+    printf("The sum of all diagonal elements is:%d",sum);
+
+    return 0;
+  }
